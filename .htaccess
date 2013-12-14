@@ -1,5 +1,17 @@
-#RewriteEngine On
-#RewriteCond %{REQUEST_URI} !=/Lawrencecreates/team.cgi
-#RewriteRule ^(.*)$ /Lawrencecreates/team.cgi [QSA,L,PT]
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !/team2.fcgi
+RewriteCond %{REQUEST_URI} !/static
+RewriteRule ^(.*)$ /team2.fcgi [QSA,L,PT]
+
+#Options +FollowSymlinks
+
 #LogLevel debug
 #AddHandler fcgid-script .fcgi
+
+#<Directory /var/chroot/home/content/55/10855655/opt/vhost/chroot/sl5-v1/root/lawrence_creates/static/
+#</Directory>
+#<Location /static>
+#   Order Deny,Allow
+#    Allow from all
+#</Location>
